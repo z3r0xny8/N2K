@@ -1,0 +1,771 @@
+/* =============================================
+   CSS UTAMA NAGA2000
+   ============================================= */
+
+:root {
+  --small-font: 12px;
+  --normal-font: 13px;
+  --large-font: 14px;
+  --x-large-font: 15px;
+}
+
+/* =============================================
+   RESET & BASE STYLES
+   Pengaturan dasar untuk elemen HTML
+   ============================================= */
+body {
+  font-size: var(--small-font);
+  display: flex;
+  flex-direction: column;
+  padding-top: 65px;
+  /* Ruang untuk header fixed */
+  padding-bottom: 52px;
+  /* Ruang untuk footer fixed */
+  font-family: Verdana, sans-serif;
+  /* Mencegah seleksi teks pada perangkat mobile */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: #000000;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* =============================================
+   LAYOUT COMPONENTS
+   Komponen layout utama website
+   ============================================= */
+
+/* Container untuk konten utama */
+.container {
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header dengan logo */
+.logo-container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 99;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px;
+  border-radius: 0 0 20px 20px;
+  border-bottom: 4px groove #DAA520;
+  background: linear-gradient(to bottom, #000, #1e1e1e);
+}
+
+.logo-container .logo {
+  width: calc(50px*150/60);
+  /* Perhitungan aspek rasio logo */
+  display: block;
+  padding: 10px;
+}
+
+.logo-container .logo img {
+  flex-grow: 1;
+}
+
+/* Footer navigasi */
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 30px 30px 0 0;
+  padding: 6px;
+  border-top: 4px groove #DAA520;
+  background: linear-gradient(to top, #000, #1e1e1e);
+}
+
+.footer a {
+  flex-basis: calc((100% - 15px*6)/ 5);
+  /* Distribusi 5 item footer */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 75px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.footer .center {
+  transform: scale(2.5) translateY(1px);
+  /* Tombol tengah lebih besar */
+  background: center/contain no-repeat;
+  background-color: inherit;
+  border-radius: 50%;
+  max-width: 100%;
+  height: auto;
+}
+
+.footer img {
+  max-width: 100%;
+  margin-bottom: 5px;
+}
+
+.footer-container {
+  text-align: center;
+  color: #fff;
+}
+
+/* =============================================
+   CONTENT SECTIONS
+   Bagian konten halaman
+   ============================================= */
+
+/* Deskripsi/konten teks */
+.description {
+  background-color: #000000;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.description h2 {
+  color: #DAA520;
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.description p {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+/* =============================================
+   ANIMATIONS & EFFECTS
+   Animasi dan efek visual
+   ============================================= */
+
+/* Efek getar untuk elemen interaktif */
+.getar {
+  -webkit-animation-name: getar;
+  animation-name: getar;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes getar {
+
+  0%,
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20% {
+    -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+}
+
+@keyframes getar {
+
+  0%,
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20% {
+    -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+}
+
+/* Teks berjalan (marquee) */
+.marquee {
+  background: linear-gradient(to left, #010001 24%, #DAA520);
+  padding: 5px 0;
+  border: 2px solid #DAA520;
+  border-radius: 15px;
+  margin: 5px;
+  height: auto;
+  display: block;
+  line-height: 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee div {
+  height: auto;
+  line-height: 22px;
+  font-size: 12px;
+  white-space: nowrap;
+  color: #fff;
+  z-index: 1;
+  font-weight: 600;
+  font-family: Verdana;
+  animation: 20s linear infinite marquee;
+  margin-top: 3px;
+}
+
+.marquee:hover div {
+  animation-play-state: paused;
+  /* Jeda animasi saat hover */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* =============================================
+   GAME GRID COMPONENTS
+   Komponen untuk grid game
+   ============================================= */
+
+/* Grid utama untuk foto game */
+.photo-grid {
+  display: grid;
+  gap: 15px;
+  padding: 15px 0;
+  grid-template-columns: repeat(5, 1fr);
+  /* Default: 5 kolom */
+  grid-template-rows: repeat(4, auto);
+  /* Default: 4 baris */
+}
+
+.game-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Kartu untuk setiap game */
+.photo-card {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.photo-card:hover {
+  transform: scale(1.05);
+  /* Efek zoom saat hover */
+}
+
+.photo-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 1/1;
+  /* Mempertahankan rasio aspek 1:1 */
+  object-fit: cover;
+}
+
+/* Overlay untuk tombol Main */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.photo-card:hover .card-overlay {
+  opacity: 1;
+  /* Tampilkan overlay saat hover */
+}
+
+/* Tombol utama pada kartu game */
+.main-button {
+  padding: 8px 16px;
+  background-color: #DAA520;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.main-button:hover {
+  background-color: #fff;
+}
+
+/* =============================================
+   RTP (Return to Player) COMPONENTS
+   Komponen untuk menampilkan RTP
+   ============================================= */
+
+/* Persentase RTP */
+.percent {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+  width: 100%;
+}
+
+.rtp-value {
+  font-weight: bold;
+}
+
+/* Container untuk bar RTP */
+.rtp-bar-container {
+  width: 100%;
+  height: 8px;
+  background-color: #333;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+/* Bar animasi RTP */
+.rtp-bar {
+  height: 100%;
+  width: 0%;
+  /* Akan diisi dengan JavaScript */
+  border-radius: 4px;
+  transition: width 1s ease-in-out;
+}
+
+/* Warna bar berdasarkan persentase RTP */
+.rtp-bar.high {
+  background-color: #28a745;
+  /* Hijau untuk 85-99% */
+}
+
+.rtp-bar.medium {
+  background-color: #ffe607;
+  /* Kuning untuk 75-85% */
+}
+
+.rtp-bar.low {
+  background-color: #dc3545;
+  /* Merah untuk 50-75% */
+}
+
+/* =============================================
+   PROVIDER NAVIGATION
+   Navigasi untuk memilih provider game
+   ============================================= */
+
+.provider-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+  gap: 50px;
+}
+
+.provider-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.provider-logo {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 5%;
+}
+
+.provider-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.provider-name {
+  color: #DAA520;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Tombol navigasi kiri/kanan */
+.nav-arrow {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-arrow:hover {
+  background-color: #DAA520;
+  color: #000;
+}
+
+/* =============================================
+   SWIPE GESTURE SUPPORT
+   Dukungan untuk gestur geser kiri/kanan
+   ============================================= */
+
+/* Area yang bisa di-swipe */
+.main-content {
+  touch-action: pan-y pinch-zoom;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Animasi transisi saat swipe */
+.provider-section {
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+/* Class untuk animasi swipe */
+.provider-section.slide-left {
+  animation: slideOutLeft 0.3s ease-out forwards;
+}
+
+.provider-section.slide-right {
+  animation: slideOutRight 0.3s ease-out forwards;
+}
+
+.provider-section.slide-in-left {
+  animation: slideInFromRight 0.3s ease-out forwards;
+}
+
+.provider-section.slide-in-right {
+  animation: slideInFromLeft 0.3s ease-out forwards;
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Indikator swipe visual */
+.swipe-indicator {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(218, 165, 32, 0.9);
+  color: #000;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.swipe-indicator.left {
+  left: 20px;
+}
+
+.swipe-indicator.right {
+  right: 20px;
+}
+
+.swipe-indicator.visible {
+  opacity: 1;
+}
+
+/* =============================================
+   PROVIDER SECTIONS
+   Pengaturan tampilan per provider
+   ============================================= */
+
+.provider-section {
+  display: none;
+  /* Sembunyikan semua section default */
+}
+
+.provider-section.active {
+  display: block;
+  /* Tampilkan section aktif */
+}
+
+/* =============================================
+   PERFORMANCE OPTIMIZATIONS
+   Optimasi untuk performa yang lebih baik
+   ============================================= */
+
+/* Hardware acceleration untuk gambar */
+img {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Hardware acceleration untuk kartu foto */
+.photo-card {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Hardware acceleration untuk animasi RTP bar */
+.rtp-bar {
+  will-change: width;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Optimasi untuk provider navigation */
+.provider-navigation {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Mengurangi repaint pada scroll */
+.main-content {
+  contain: layout style paint;
+}
+
+/* Optimasi gambar dengan aspect ratio */
+.photo-card img {
+  contain: layout;
+}
+
+/* =============================================
+   RESPONSIVE DESIGN
+   Penyesuaian untuk berbagai ukuran layar
+   ============================================= */
+
+/* Tablet dan Desktop */
+@media(min-width:768px) {
+  body {
+    font-size: var(--normal-font);
+  }
+
+  .container {
+    width: 970px;
+  }
+}
+
+@media(min-width:992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media(min-width:1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* Responsive Grid Layout */
+@media (max-width: 1200px) {
+  .photo-grid {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, auto);
+  }
+}
+
+@media (max-width: 992px) {
+  .photo-grid {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, auto);
+  }
+}
+
+@media (max-width: 768px) {
+  .photo-grid {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, auto);
+  }
+
+  /* Penyesuaian container dan navigasi untuk tablet */
+  .container {
+    padding: 0 10px;
+  }
+
+  .provider-navigation {
+    margin: 15px 0;
+  }
+
+  .nav-arrow {
+    width: 35px;
+    height: 35px;
+  }
+
+  .provider-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .provider-name {
+    font-size: 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .photo-grid {
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 kolom untuk mobile */
+    grid-template-rows: repeat(5, auto);
+    /* 5 baris untuk mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-grid {
+    grid-template-columns: repeat(4, 1fr);
+    /* Tetap 4 kolom untuk mobile kecil */
+    grid-template-rows: repeat(5, auto);
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .percent {
+    font-size: 10px;
+  }
+
+  .main-button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+/* =============================================
+   POPUP WITHDRAW
+   Tampilan notifikasi withdraw di bawah layar
+   ============================================= */
+.popup.wd {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background-color: #DAA520;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 9999;
+  display: inline-block;
+  white-space: nowrap;
+  max-width: 90%;
+}
+
+.popup.wd.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
