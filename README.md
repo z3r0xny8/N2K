@@ -180,18 +180,16 @@ N2Kv2/
 
 ## 📝 Changelog
 
-### v1.1 (Latest)
+### v1.0 
 - ✅ **Popup Withdraw Notification** - Notifikasi withdraw otomatis dengan animasi smooth
 - ✅ **Rounded Amount Display** - Nominal kelipatan Rp. 50.000 untuk tampilan lebih realistis
 - ✅ **DOM Cleanup** - Optimasi memory dengan auto-remove element
-
-### v1.0
-- ✅ Multi-provider navigation dengan swipe gesture
-- ✅ Time-based RTP refresh (5 Menit)
-- ✅ RTP cache system (tidak refresh saat ganti provider)
-- ✅ PWA support dengan offline mode
-- ✅ Performance optimizations
-- ✅ SEO enhancements
+- ✅ **Multi-Provider** - navigation dengan swipe gesture
+- ✅ **Time-Based** - RTP refresh setiap (5 Menit)
+- ✅ **RTP Cache System** - Tidak refresh saat ganti provider
+- ✅ **PWA** - support dengan offline mode
+- ✅ **Performance Optimizations** 
+- ✅ **SEO**
 
 ---
 
